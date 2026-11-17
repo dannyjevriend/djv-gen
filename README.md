@@ -50,10 +50,11 @@ the project unless `allow_outside` is set.
 1. **Draw Things** → Settings → API Server: on, **gRPC + TLS, port 7859**.
    Check with `lsof -nP -iTCP:7859 -sTCP:LISTEN`. *(Port 7860 is a different,
    older interface — this package doesn't use it.)*
-2. **Bionic** → quit it, run `./make-entry.sh` and paste the object it prints
-   into the `servers` list in `~/.lmstudio/apps/bionic/.internal/ng-mcp.json`,
-   then relaunch. *(The committed `drawthings-mcp-entry.example.json` has a
-   placeholder path — your local entry is generated, never committed.)*
+2. **Bionic** → quit it, then from **this folder** run `sh make-entry.sh` and
+   paste the object it prints into the `servers` list in
+   `~/.lmstudio/apps/bionic/.internal/ng-mcp.json`, then relaunch. *(Or copy
+   `drawthings-mcp-entry.example.json` and replace `/path/to/DrawThingsMCP` with
+   the real folder path. The local entry is generated, never committed.)*
 3. First start builds a private Python environment (~1 minute, once).
 
 You need Apple Silicon, Draw Things, and `uv` (or Python 3.11+). No Node, no
