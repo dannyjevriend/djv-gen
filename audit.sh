@@ -9,7 +9,7 @@ IDENT="/Users/[A-Za-z]|${USER}${AUDIT_IDENT:+|$AUDIT_IDENT}"
 rc=0
 
 echo "— secrets (blocking) —"
-if grep -rInE "$SECRETS" . --exclude-dir=upstream --exclude-dir=__pycache__ \
+if grep -rInE "$SECRETS" . --exclude-dir=upstream --exclude-dir=__pycache__ --exclude-dir=.git \
     --exclude=audit.sh --exclude=drawthings-mcp-entry.json; then
   rc=1
 else
@@ -18,7 +18,7 @@ fi
 
 echo
 echo "— personal identifiers (review) —"
-grep -rInE "$IDENT" . --exclude-dir=upstream --exclude-dir=__pycache__ \
+grep -rInE "$IDENT" . --exclude-dir=upstream --exclude-dir=__pycache__ --exclude-dir=.git \
   --exclude=audit.sh --exclude=drawthings-mcp-entry.json || echo "none"
 
 echo
