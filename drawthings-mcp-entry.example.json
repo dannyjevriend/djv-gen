@@ -1,0 +1,12 @@
+{
+  "id": "0d1f3a64-8b2e-4c71-9a5f-3c7e6d2b1a90",
+  "name": "djv-gen",
+  "description": "DJV.TOOLS · Gen — Draw Things: local image, edit and short-video generation (generate/transform/video/replay/status/guide)",
+  "enabled": true,
+  "connection": {
+    "type": "stdio",
+    "command": "/path/to/DrawThingsMCP/run.sh",
+    "args": [],
+    "env": {}
+  }
+}

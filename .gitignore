@@ -1,0 +1,16 @@
+# outputs and caches
+gen/
+__pycache__/
+*.pyc
+.DS_Store
+
+# local settings; never commit secrets or machine paths
+config.env
+.env
+.env.*
+drawthings-mcp-entry.json
+
+# editors / envs
+.venv/
+.idea/
+.vscode/
