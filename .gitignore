@@ -14,3 +14,6 @@ drawthings-mcp-entry.json
 .venv/
 .idea/
 .vscode/
+
+# binary provenance, kept locally
+upstream/*.zip
