@@ -50,12 +50,16 @@ the project unless `allow_outside` is set.
 1. **Draw Things** → Settings → API Server: on, **gRPC + TLS, port 7859**.
    Check with `lsof -nP -iTCP:7859 -sTCP:LISTEN`. *(Port 7860 is a different,
    older interface — this package doesn't use it.)*
-2. **Bionic** → quit it, then from **this folder** run `sh make-entry.sh` and
-   paste the object it prints into the `servers` list in
-   `~/.lmstudio/apps/bionic/.internal/ng-mcp.json`, then relaunch. *(Or copy
-   `drawthings-mcp-entry.example.json` and replace `/path/to/DrawThingsMCP` with
-   the real folder path. The local entry is generated, never committed.)*
-3. First start builds a private Python environment (~1 minute, once).
+2. **Quit Bionic (⌘Q)**, then from this folder run:
+
+   ```sh
+   sh setup.sh
+   ```
+
+   It creates the Python environment (~1 minute, once) and adds this server to
+   Bionic's config, saving a backup first. Using another MCP client? It prints
+   the JSON to paste instead.
+3. **Reopen Bionic** and start a new chat.
 
 You need Apple Silicon, Draw Things, and `uv` (or Python 3.11+). No Node, no
 Homebrew, no accounts. **There is no `.skill` to install — this folder is the
@@ -116,7 +120,7 @@ rendering. It uses Draw Things' native gRPC API rather than the older HTTP one,
 which is why model switching, references, control images, video and replay
 work at all.
 
-`server.py` · `gen.py` · `presets/` · `run.sh` · `install.sh` · `make-entry.sh` ·
+`server.py` · `gen.py` · `presets/` · `run.sh` · `install.sh` · `setup.sh` ·
 `audit.sh` · `docs/` · `upstream/`
 
 ## Credits
